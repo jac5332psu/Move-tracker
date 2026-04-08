@@ -142,7 +142,7 @@
             {MOODS.map(m => (
               <button key={m.val} onClick={() => onChange(value === m.val ? null : m.val)} style={{
                 background: value === m.val ? "#2D5A3D" : "#F0EBE3", border: "none", borderRadius: 12,
-                padding: "7px 9px", fontSize: 18, cursor: "pointer",
+                padding: "5px 6px", fontSize: 15, cursor: "pointer",
                 transform: value === m.val ? "scale(1.15)" : "scale(1)", transition: "all 0.15s",
                 boxShadow: value === m.val ? "0 2px 8px rgba(45,90,61,0.3)" : "none"
               }}>{m.emoji}</button>
