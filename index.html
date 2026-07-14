@@ -242,7 +242,7 @@ function DayForm({dateStr,data,onUpdate,cheatDay,onSetCheat,ver}){
             <span style={{fontSize:13,fontWeight:600,color:data.water>=WATER_TARGET?'#2D5A3D':'#1A1A1A'}}>{data.water>=WATER_TARGET?'✓ ':''}Water</span>
             <p style={{fontSize:10,color:'#B0A898',marginTop:1}}>Half gallon = 64 fl oz</p>
           </div>
-          <Counter value={data.water} target={WATER_TARGET} unit="oz" increments={[8,16]}
+          <Counter value={data.water} target={WATER_TARGET} unit="oz" increments={[8,16,26,32,64]}
             onAdd={i=>onUpdate({water:Math.min(data.water+i,200)})} onReset={()=>onUpdate({water:0})}/>
         </div>
       </div>
