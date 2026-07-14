@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-  <meta name="apple-mobile-web-app-title" content="Move"/>
-  <title>Move — Daily Tracker</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;background:#F5F0E8;font-family:'DM Sans',sans-serif}
-    #root{height:100%}
-    .tab-btn{background:none;border:none;cursor:pointer;padding:8px 0;display:flex;flex-direction:column;align-items:center;gap:3px;flex:1}
-    .pill-btn{border:none;border-radius:20px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:8px 14px;transition:all .15s}
-    .add-btn{background:#F0EBE3;color:#1A1A1A}
-    .add-btn:active{background:#E4DDD2;transform:scale(.97)}
-    .card{background:#fff;border-radius:20px;padding:20px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
-    .section-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#8B8578;margin-bottom:10px}
-    textarea,input[type=text]{font-family:'DM Sans',sans-serif}
-    ::-webkit-scrollbar{display:none}
-    .nav-btn{background:#F0EBE3;border:none;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1A1A1A;flex-shrink:0}
-    .day-cell{border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:8px;transition:transform .1s;padding:4px 1px;min-height:36px;width:100%}
-    .day-cell:active{transform:scale(.88)}
-    .backup-btn{width:100%;padding:14px;border:none;border-radius:14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:8px}
-    .backup-btn:active{transform:scale(.97)}
-    .toast{position:fixed;top:60px;left:50%;transform:translateX(-50%);background:#1A1A1A;color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:500;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
-    .toast.show{opacity:1}
-    .overlay{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;justify-content:flex-end}
-    .overlay-bg{position:absolute;inset:0;background:rgba(0,0,0,.45)}
-    .sheet{position:relative;background:#F5F0E8;border-radius:24px 24px 0 0;max-height:90vh;overflow-y:auto;padding:0 16px 52px}
-    .handle{width:36px;height:4px;background:#D0C8BC;border-radius:2px;margin:12px auto 14px}
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Move"/>
+<title>Move — 75 Medium Hard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#F5F0E8;font-family:'DM Sans',sans-serif}
+#root{height:100%}
+.tab-btn{background:none;border:none;cursor:pointer;padding:8px 0;display:flex;flex-direction:column;align-items:center;gap:3px;flex:1}
+.pill-btn{border:none;border-radius:20px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:8px 14px;transition:all .15s}
+.add-btn{background:#F0EBE3;color:#1A1A1A}
+.add-btn:active{background:#E4DDD2;transform:scale(.97)}
+.card{background:#fff;border-radius:20px;padding:18px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.section-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#8B8578;margin-bottom:10px}
+textarea,input[type=text]{font-family:'DM Sans',sans-serif}
+::-webkit-scrollbar{display:none}
+.nav-btn{background:#F0EBE3;border:none;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1A1A1A;flex-shrink:0}
+.day-cell{border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:8px;transition:transform .1s;padding:4px 1px;min-height:36px;width:100%}
+.day-cell:active{transform:scale(.88)}
+.backup-btn{width:100%;padding:14px;border:none;border-radius:14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:8px}
+.backup-btn:active{transform:scale(.97)}
+.toast{position:fixed;top:60px;left:50%;transform:translateX(-50%);background:#1A1A1A;color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:500;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
+.overlay{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;justify-content:flex-end}
+.overlay-bg{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.sheet{position:relative;background:#F5F0E8;border-radius:24px 24px 0 0;max-height:90vh;overflow-y:auto;padding:0 16px 52px}
+.handle{width:36px;height:4px;background:#D0C8BC;border-radius:2px;margin:12px auto 14px}
+.chk-row{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid #F0EBE3}
+.chk-row:last-child{border-bottom:none}
+.chk-circle{width:26px;height:26px;border-radius:50%;border:2px solid #D0C8BC;background:#FAF8F5;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all .15s}
+.chk-circle.done{background:#2D5A3D;border-color:#2D5A3D;color:#fff}
+.mini-btn{border:none;border-radius:12px;background:#F0EBE3;color:#1A1A1A;font-size:12px;font-weight:600;padding:5px 10px;cursor:pointer;font-family:'DM Sans',sans-serif}
+.mini-btn:active{background:#E4DDD2;transform:scale(.95)}
+.res-chip{border:none;border-radius:12px;font-size:11px;font-weight:600;padding:5px 10px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s}
+</style>
 </head>
 <body>
 <div id="root"></div>
@@ -41,75 +48,92 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
 <script type="text/babel">
-const {useState,useEffect,useCallback,useRef,useMemo}=React;
+const {useState,useEffect,useRef,useMemo}=React;
 
-// ── Local-timezone date helpers ───────────────────────────────────────────────
+// ── Dates ─────────────────────────────────────────────────────────────────────
 const localDateStr=(d=new Date())=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
 const todayStr=()=>localDateStr();
 const strToDate=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
 const fmtShort=s=>strToDate(s).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-const fmtFull=s=>strToDate(s).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
 const monthLabel=(y,m)=>new Date(y,m,1).toLocaleDateString('en-US',{month:'long',year:'numeric'});
 const monthShort=(y,m)=>new Date(y,m,1).toLocaleDateString('en-US',{month:'short'});
+const dayDiff=(a,b)=>Math.round((strToDate(b)-strToDate(a))/86400000);
 
-function getWeeks(year,month){
-  const first=new Date(year,month,1).getDay();
-  const total=new Date(year,month+1,0).getDate();
-  const cells=[];
-  for(let i=0;i<first;i++)cells.push(null);
-  for(let d=1;d<=total;d++)cells.push(localDateStr(new Date(year,month,d)));
-  while(cells.length%7)cells.push(null);
-  const weeks=[];
-  for(let i=0;i<cells.length;i+=7)weeks.push(cells.slice(i,i+7));
-  return weeks;
-}
+// ── Program constants ─────────────────────────────────────────────────────────
+const P_START='2026-07-14';
+const P_END='2026-09-12';
+const P_DAYS=61;
+const progDayNum=ds=>{const n=dayDiff(P_START,ds)+1;return(n>=1&&n<=P_DAYS)?n:null};
+const progWeekNum=ds=>{const n=progDayNum(ds);return n?Math.ceil(n/7):null}; // Week 1 = days 1-7 (Tue–Mon)
+const progWeekDates=w=>Array.from({length:7},(_,i)=>{const n=(w-1)*7+i+1;if(n>P_DAYS)return null;const d=strToDate(P_START);d.setDate(d.getDate()+n-1);return localDateStr(d)}).filter(Boolean);
+const TOTAL_WEEKS=Math.ceil(P_DAYS/7); // 9 (week 9 is 5 days)
 
 // ── Storage ───────────────────────────────────────────────────────────────────
-const PFX='move:day:';
-const emptyDay=()=>({walkMinutes:0,resistance:false,sports:[],moodAM:null,moodPM:null,notes:''});
-const loadDay=date=>{try{const r=localStorage.getItem(PFX+date);return r?JSON.parse(r):emptyDay()}catch{return emptyDay()}};
-const saveDay=(date,data)=>{try{localStorage.setItem(PFX+date,JSON.stringify(data))}catch{}};
-const getAllData=()=>{const a={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith(PFX)){try{a[k]=JSON.parse(localStorage.getItem(k))}catch{}}}return a};
-const restoreAllData=obj=>Object.entries(obj).forEach(([k,v])=>{if(k.startsWith(PFX)){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}});
-
+const PFX='move:p:';
+const META_CHEAT='move:meta:cheatday';
+const emptyDay=()=>({w1:0,w1r:false,w2:0,w2r:false,sugar:false,produce:0,protein:null,vitamin:false,water:0,pages:0,photo:false,moodAM:null,moodPM:null,notes:''});
+const loadDay=ds=>{try{const r=localStorage.getItem(PFX+ds);return r?{...emptyDay(),...JSON.parse(r)}:emptyDay()}catch{return emptyDay()}};
+const saveDay=(ds,data)=>{try{localStorage.setItem(PFX+ds,JSON.stringify(data))}catch{}};
+const getCheatDay=()=>{try{return localStorage.getItem(META_CHEAT)||null}catch{return null}};
+const setCheatDay=ds=>{try{localStorage.setItem(META_CHEAT,ds)}catch{}};
+const getAllData=()=>{const a={};for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('move:')){try{a[k]=JSON.parse(localStorage.getItem(k))}catch{a[k]=localStorage.getItem(k)}}}return a};
+const restoreAllData=obj=>Object.entries(obj).forEach(([k,v])=>{if(k.startsWith('move:')){try{localStorage.setItem(k,typeof v==='string'?v:JSON.stringify(v))}catch{}}});
 const showToast=msg=>{const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2800)};
 
-// ── Constants ─────────────────────────────────────────────────────────────────
-const WALK_GOAL=90;
+// ── Requirements ──────────────────────────────────────────────────────────────
+const W_TARGET=45, WATER_TARGET=64, PRODUCE_TARGET=5, PAGES_TARGET=5, RES_WEEKLY=3;
+const PROTEINS=[{id:'white',label:'🍗 White Meat'},{id:'fish',label:'🐟 Fatty Fish'},{id:'red',label:'🥩 Lean Red'},{id:'pork',label:'🥓 Pork/Fatty'}];
 const MOODS=[{val:1,e:'😞'},{val:2,e:'😕'},{val:3,e:'😐'},{val:4,e:'🙂'},{val:5,e:'😄'}];
-const SPORTS=['🏐 Volleyball','🚴 Cycling','🏊 Swimming','🎾 Tennis','🧘 Yoga','🏃 Run'];
 const DAY_NAMES=['Su','Mo','Tu','We','Th','Fr','Sa'];
 
-// ── Heat color ────────────────────────────────────────────────────────────────
-const heatColor=mins=>{
-  if(!mins||mins===0)return '#EDE8E0';
-  if(mins>=WALK_GOAL)return '#2D5A3D';
-  if(mins>=60)return '#6AAF82';
-  if(mins>=30)return '#A3CDB0';
-  return '#D0E8D8';
+const coreComplete=d=>d.w1>=W_TARGET&&d.w2>=W_TARGET&&d.sugar&&d.produce>=PRODUCE_TARGET&&d.water>=WATER_TARGET;
+const fullComplete=d=>coreComplete(d)&&d.protein&&d.vitamin&&d.pages>=PAGES_TARGET;
+const anyActivity=d=>d.w1>0||d.w2>0||d.sugar||d.produce>0||d.protein||d.vitamin||d.water>0||d.pages>0;
+const missedItems=d=>{
+  const m=[];
+  if(d.w1<W_TARGET)m.push('Workout 1');
+  if(d.w2<W_TARGET)m.push('Workout 2');
+  if(!d.sugar)m.push('No Sugar');
+  if(d.produce<PRODUCE_TARGET)m.push('Produce');
+  if(d.water<WATER_TARGET)m.push('Water');
+  if(!d.protein)m.push('Protein Log');
+  if(!d.vitamin)m.push('Vitamin');
+  if(d.pages<PAGES_TARGET)m.push('Reading');
+  return m;
 };
-const heatTextColor=mins=>mins>=WALK_GOAL?'#fff':'#1A1A1A';
+const weekResCount=w=>progWeekDates(w).filter(ds=>{const d=loadDay(ds);return d.w1r||d.w2r}).length;
+const lastPhotoDate=upTo=>{
+  let best=null;
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k&&k.startsWith(PFX)){
+      const ds=k.slice(PFX.length);
+      if(ds<=upTo){try{const d=JSON.parse(localStorage.getItem(k));if(d.photo&&(!best||ds>best))best=ds}catch{}}
+    }
+  }
+  return best;
+};
 
-// ── WalkRing ──────────────────────────────────────────────────────────────────
-function WalkRing({minutes,goal,size=140}){
-  const r=size*.37,circ=2*Math.PI*r,pct=Math.min(minutes/goal,1),done=minutes>=goal;
+// Heat colors: full=dark, core=mid, partial=light, none=grey
+const dayColor=d=>fullComplete(d)?'#2D5A3D':coreComplete(d)?'#6AAF82':anyActivity(d)?'#D0E8D8':'#EDE8E0';
+const dayTextColor=d=>(fullComplete(d)||coreComplete(d))?'#fff':'#1A1A1A';
+
+// ── Small components ──────────────────────────────────────────────────────────
+function Counter({value,target,unit,increments,onAdd,onReset}){
+  const done=value>=target;
   return(
-    <div style={{position:'relative',width:size,height:size,margin:'0 auto'}}>
-      <svg width={size} height={size} style={{transform:'rotate(-90deg)'}}>
-        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="#E8E0D0" strokeWidth={size*.07}/>
-        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={done?'#2D5A3D':'#E8A84C'} strokeWidth={size*.07}
-          strokeDasharray={`${pct*circ} ${circ}`} strokeLinecap="round" style={{transition:'stroke-dasharray .5s ease'}}/>
-      </svg>
-      <div style={{position:'absolute',inset:0,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
-        <span style={{fontSize:size*.2,fontWeight:700,color:done?'#2D5A3D':'#1A1A1A',fontFamily:"'DM Serif Display',serif"}}>{minutes}</span>
-        <span style={{fontSize:size*.08,color:'#8B8578',letterSpacing:1,textTransform:'uppercase'}}>/ {goal} min</span>
-        {done&&<span style={{fontSize:size*.12,marginTop:2}}>✓</span>}
-      </div>
+    <div style={{display:'flex',alignItems:'center',gap:8}}>
+      <span style={{fontSize:14,fontWeight:700,color:done?'#2D5A3D':'#1A1A1A',minWidth:62,textAlign:'right',fontFamily:"'DM Serif Display',serif"}}>
+        {value}<span style={{fontSize:10,fontWeight:400,color:'#8B8578'}}> /{target}{unit}</span>
+      </span>
+      {increments.map(i=>(
+        <button key={i} className="mini-btn" onClick={()=>onAdd(i)}>+{i}</button>
+      ))}
+      {value>0&&<button onClick={onReset} style={{background:'none',border:'none',color:'#C09070',fontSize:11,cursor:'pointer',padding:'0 2px'}}>↺</button>}
     </div>
   );
 }
 
-// ── MoodPicker ────────────────────────────────────────────────────────────────
 function MoodPicker({value,onChange,label}){
   return(
     <div>
@@ -118,9 +142,8 @@ function MoodPicker({value,onChange,label}){
         {MOODS.map(m=>(
           <button key={m.val} onClick={()=>onChange(value===m.val?null:m.val)} style={{
             background:value===m.val?'#2D5A3D':'#F0EBE3',border:'none',borderRadius:12,
-            padding:'5px 6px',fontSize:15,cursor:'pointer',
-            transform:value===m.val?'scale(1.15)':'scale(1)',transition:'all .15s',
-            boxShadow:value===m.val?'0 2px 8px rgba(45,90,61,.3)':'none'
+            padding:'6px 8px',fontSize:17,cursor:'pointer',
+            transform:value===m.val?'scale(1.15)':'scale(1)',transition:'all .15s'
           }}>{m.e}</button>
         ))}
       </div>
@@ -128,17 +151,161 @@ function MoodPicker({value,onChange,label}){
   );
 }
 
-// ── DayEditSheet ──────────────────────────────────────────────────────────────
-function DayEditSheet({dateStr,onClose,onSaved}){
+// ── Shared day form (Today tab + edit sheet) ──────────────────────────────────
+function DayForm({dateStr,data,onUpdate,cheatDay,onSetCheat,ver}){
+  const today=todayStr();
+  const wk=progWeekNum(dateStr);
+  const resCount=wk?weekResCount(wk):0;
+  const lastPhoto=lastPhotoDate(today);
+  const photoDue=dateStr===today&&(!lastPhoto||dayDiff(lastPhoto,today)>=7);
+  const [confirmCheat,setConfirmCheat]=useState(false);
+
+  const Workout=({n})=>{
+    const mins=data['w'+n], res=data['w'+n+'r'], done=mins>=W_TARGET;
+    return(
+      <div style={{padding:'10px 0',borderBottom:'1px solid #F0EBE3'}}>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:6}}>
+          <span style={{fontSize:13,fontWeight:600,color:done?'#2D5A3D':'#1A1A1A'}}>
+            {done?'✓ ':''}Workout {n} <span style={{fontSize:11,color:'#8B8578',fontWeight:400}}>(45 min)</span>
+          </span>
+          <button className="res-chip" onClick={()=>onUpdate({['w'+n+'r']:!res})}
+            style={{background:res?'#2D5A3D':'#F0EBE3',color:res?'#fff':'#8B8578'}}>
+            💪 Resistance{res?' ✓':''}
+          </button>
+        </div>
+        <Counter value={mins} target={W_TARGET} unit="m" increments={[15,45]}
+          onAdd={i=>onUpdate({['w'+n]:Math.min(mins+i,240)})} onReset={()=>onUpdate({['w'+n]:0,['w'+n+'r']:false})}/>
+      </div>
+    );
+  };
+
+  const CheckRow=({label,done,onToggle,sub})=>(
+    <div className="chk-row">
+      <div>
+        <span style={{fontSize:13,fontWeight:600,color:done?'#2D5A3D':'#1A1A1A'}}>{label}</span>
+        {sub&&<p style={{fontSize:10,color:'#B0A898',marginTop:1}}>{sub}</p>}
+      </div>
+      <button className={'chk-circle'+(done?' done':'')} onClick={onToggle}>{done?'✓':''}</button>
+    </div>
+  );
+
+  const isCheatToday=cheatDay===dateStr;
+  const cheatSpent=cheatDay&&!isCheatToday;
+
+  return(
+    <>
+      {/* Workouts */}
+      <div className="card" style={{marginBottom:12}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+          <p className="section-label" style={{marginBottom:0}}>Fitness · 2 × 45 min</p>
+          {wk&&(
+            <div style={{display:'flex',alignItems:'center',gap:4}}>
+              <span style={{fontSize:10,color:'#8B8578'}}>Wk {wk} lifts:</span>
+              {[0,1,2].map(i=>(
+                <span key={i} style={{width:8,height:8,borderRadius:'50%',background:resCount>i?'#2D5A3D':'#E8E0D0',display:'inline-block'}}/>
+              ))}
+              <span style={{fontSize:10,color:resCount>=RES_WEEKLY?'#2D5A3D':'#8B8578',fontWeight:600}}>{resCount}/{RES_WEEKLY}</span>
+            </div>
+          )}
+        </div>
+        <Workout n={1}/>
+        <Workout n={2}/>
+        <p style={{fontSize:10,color:'#B0A898',marginTop:8}}>Remember: one workout outdoors (tracked on your honor).</p>
+      </div>
+
+      {/* Diet */}
+      <div className="card" style={{marginBottom:12}}>
+        <p className="section-label">Diet</p>
+        <CheckRow label="No Processed Sugar" done={data.sugar} onToggle={()=>onUpdate({sugar:!data.sugar})} sub="Whole fruit fine; nothing juiced or blended"/>
+        <div className="chk-row">
+          <div>
+            <span style={{fontSize:13,fontWeight:600,color:data.produce>=PRODUCE_TARGET?'#2D5A3D':'#1A1A1A'}}>{data.produce>=PRODUCE_TARGET?'✓ ':''}Fruits &amp; Vegetables</span>
+            <p style={{fontSize:10,color:'#B0A898',marginTop:1}}>Raw fruit, cooked vegetables prioritized</p>
+          </div>
+          <Counter value={data.produce} target={PRODUCE_TARGET} unit="" increments={[1]}
+            onAdd={()=>onUpdate({produce:Math.min(data.produce+1,15)})} onReset={()=>onUpdate({produce:0})}/>
+        </div>
+        <div className="chk-row" style={{flexDirection:'column',alignItems:'stretch',gap:8}}>
+          <span style={{fontSize:13,fontWeight:600,color:data.protein?'#2D5A3D':'#1A1A1A'}}>{data.protein?'✓ ':''}Protein Source</span>
+          <div style={{display:'flex',flexWrap:'wrap',gap:6}}>
+            {PROTEINS.map(p=>(
+              <button key={p.id} className="res-chip" onClick={()=>onUpdate({protein:data.protein===p.id?null:p.id})}
+                style={{background:data.protein===p.id?'#2D5A3D':'#F0EBE3',color:data.protein===p.id?'#fff':'#1A1A1A'}}>
+                {p.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <CheckRow label="Multivitamin" done={data.vitamin} onToggle={()=>onUpdate({vitamin:!data.vitamin})}/>
+        <div className="chk-row">
+          <div>
+            <span style={{fontSize:13,fontWeight:600,color:data.water>=WATER_TARGET?'#2D5A3D':'#1A1A1A'}}>{data.water>=WATER_TARGET?'✓ ':''}Water</span>
+            <p style={{fontSize:10,color:'#B0A898',marginTop:1}}>Half gallon = 64 fl oz</p>
+          </div>
+          <Counter value={data.water} target={WATER_TARGET} unit="oz" increments={[8,16]}
+            onAdd={i=>onUpdate({water:Math.min(data.water+i,200)})} onReset={()=>onUpdate({water:0})}/>
+        </div>
+      </div>
+
+      {/* Alcohol */}
+      <div className="card" style={{marginBottom:12}}>
+        <p className="section-label">Alcohol</p>
+        {isCheatToday?(
+          <p style={{fontSize:13,color:'#B07A20',fontWeight:600}}>🍺 Cheat Day used today — back to zero tomorrow.</p>
+        ):cheatSpent?(
+          <p style={{fontSize:12,color:'#8B8578'}}>✓ Alcohol-free. Cheat day was used on {fmtShort(cheatDay)}.</p>
+        ):(
+          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+            <span style={{fontSize:13,fontWeight:600,color:'#2D5A3D'}}>✓ Alcohol-Free (default)</span>
+            {!confirmCheat?(
+              <button className="res-chip" onClick={()=>setConfirmCheat(true)} style={{background:'#F0EBE3',color:'#B07A20'}}>Use Cheat Day…</button>
+            ):(
+              <div style={{display:'flex',gap:6}}>
+                <button className="res-chip" onClick={()=>{onSetCheat(dateStr);setConfirmCheat(false)}} style={{background:'#B07A20',color:'#fff'}}>Confirm — one time only</button>
+                <button className="res-chip" onClick={()=>setConfirmCheat(false)} style={{background:'#F0EBE3',color:'#555'}}>Cancel</button>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Reading + Photo */}
+      <div className="card" style={{marginBottom:12}}>
+        <p className="section-label">Mind</p>
+        <div className="chk-row">
+          <div>
+            <span style={{fontSize:13,fontWeight:600,color:data.pages>=PAGES_TARGET?'#2D5A3D':'#1A1A1A'}}>{data.pages>=PAGES_TARGET?'✓ ':''}Reading</span>
+            <p style={{fontSize:10,color:'#B0A898',marginTop:1}}>5+ pages · fiction welcome</p>
+          </div>
+          <Counter value={data.pages} target={PAGES_TARGET} unit="pg" increments={[1,5]}
+            onAdd={i=>onUpdate({pages:Math.min(data.pages+i,200)})} onReset={()=>onUpdate({pages:0})}/>
+        </div>
+        <CheckRow label={`Progress Photo${photoDue?' 📸':''}`} done={data.photo} onToggle={()=>onUpdate({photo:!data.photo})}
+          sub={photoDue?'Due — 7+ days since your last one':lastPhoto?`Last: ${fmtShort(lastPhoto)}`:'Weekly'}/>
+      </div>
+
+      {/* Mood + note */}
+      <div className="card" style={{marginBottom:12}}>
+        <p className="section-label">Mood Check-in</p>
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}>
+          <MoodPicker value={data.moodAM} onChange={v=>onUpdate({moodAM:v})} label="☀️ Morning"/>
+          <MoodPicker value={data.moodPM} onChange={v=>onUpdate({moodPM:v})} label="🌙 Evening"/>
+        </div>
+      </div>
+      <div className="card" style={{marginBottom:12}}>
+        <p className="section-label">Note</p>
+        <textarea value={data.notes||''} onChange={e=>onUpdate({notes:e.target.value})} placeholder="How did it go?"
+          style={{width:'100%',padding:'10px 12px',borderRadius:10,border:'1px solid #E8E0D0',fontSize:13,background:'#FAF8F5',color:'#1A1A1A',resize:'none',height:68,outline:'none',lineHeight:1.5}}/>
+      </div>
+    </>
+  );
+}
+
+// ── Edit sheet ────────────────────────────────────────────────────────────────
+function DayEditSheet({dateStr,onClose,onSaved,cheatDay,onSetCheat,ver}){
   const [data,setData]=useState(()=>loadDay(dateStr));
-  const [sportInput,setSportInput]=useState('');
-  const [showSports,setShowSports]=useState(false);
-  const isToday=dateStr===todayStr();
-
   const upd=patch=>{const next={...data,...patch};setData(next);saveDay(dateStr,next);onSaved(dateStr,next)};
-  const toggleSport=s=>{const c=data.sports||[];upd({sports:c.includes(s)?c.filter(x=>x!==s):[...c,s]})};
-  const addCustom=()=>{if(!sportInput.trim())return;upd({sports:[...(data.sports||[]),sportInput.trim()]});setSportInput('')};
-
+  const n=progDayNum(dateStr);
   return(
     <div className="overlay">
       <div className="overlay-bg" onClick={onClose}/>
@@ -146,206 +313,118 @@ function DayEditSheet({dateStr,onClose,onSaved}){
         <div className="handle"/>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:14}}>
           <div>
-            <p style={{fontFamily:"'DM Serif Display',serif",fontSize:18,color:'#1A1A1A'}}>{fmtShort(dateStr)}</p>
-            {isToday&&<span style={{fontSize:11,color:'#2D5A3D',fontWeight:600,letterSpacing:.5}}>TODAY</span>}
+            <p style={{fontFamily:"'DM Serif Display',serif",fontSize:18}}>{fmtShort(dateStr)}</p>
+            {n&&<span style={{fontSize:11,color:'#2D5A3D',fontWeight:600}}>DAY {n} OF {P_DAYS}</span>}
           </div>
           <button onClick={onClose} style={{background:'#E8E0D0',border:'none',borderRadius:'50%',width:32,height:32,fontSize:15,cursor:'pointer',color:'#555'}}>✕</button>
         </div>
-
-        {/* Walk */}
-        <div className="card" style={{marginBottom:12}}>
-          <p className="section-label">Walk Minutes</p>
-          <WalkRing minutes={data.walkMinutes} goal={WALK_GOAL} size={120}/>
-          <div style={{display:'flex',gap:7,marginTop:12,justifyContent:'center',flexWrap:'wrap'}}>
-            {[15,30,45,60,90].map(m=>(
-              <button key={m} className="pill-btn add-btn" onClick={()=>upd({walkMinutes:Math.min(data.walkMinutes+m,300)})}> +{m}</button>
-            ))}
-          </div>
-          {data.walkMinutes>0&&<button onClick={()=>upd({walkMinutes:0})} style={{display:'block',margin:'8px auto 0',background:'none',border:'none',color:'#C09070',fontSize:12,cursor:'pointer'}}>Reset</button>}
-        </div>
-
-        {/* Resistance + Sports */}
-        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12,marginBottom:12}}>
-          <div className="card" style={{textAlign:'center'}}>
-            <p className="section-label">Resistance</p>
-            <button onClick={()=>upd({resistance:!data.resistance})} style={{width:58,height:58,borderRadius:'50%',border:'none',cursor:'pointer',background:data.resistance?'#2D5A3D':'#F0EBE3',fontSize:22,transition:'all .2s',transform:data.resistance?'scale(1.05)':'scale(1)',boxShadow:data.resistance?'0 4px 14px rgba(45,90,61,.35)':'none'}}>
-              {data.resistance?'💪':'🏋️'}
-            </button>
-            <p style={{fontSize:11,color:data.resistance?'#2D5A3D':'#8B8578',marginTop:6,fontWeight:600}}>{data.resistance?'Done!':'Tap to log'}</p>
-          </div>
-          <div className="card">
-            <p className="section-label">Sports</p>
-            <div style={{display:'flex',flexWrap:'wrap',gap:4,minHeight:28}}>
-              {(data.sports||[]).map(s=>(
-                <span key={s} onClick={()=>toggleSport(s)} style={{background:'#2D5A3D',color:'#fff',borderRadius:10,fontSize:11,padding:'2px 7px',cursor:'pointer'}}>{s} ×</span>
-              ))}
-              {!(data.sports?.length)&&<span style={{fontSize:11,color:'#B0A898'}}>None</span>}
-            </div>
-            <button onClick={()=>setShowSports(!showSports)} className="pill-btn add-btn" style={{marginTop:7,width:'100%',fontSize:11}}>{showSports?'Close':'+ Add'}</button>
-          </div>
-        </div>
-
-        {showSports&&(
-          <div className="card" style={{marginBottom:12}}>
-            <div style={{display:'flex',flexWrap:'wrap',gap:6,marginBottom:8}}>
-              {SPORTS.map(s=>{const a=(data.sports||[]).includes(s);return(
-                <button key={s} className="pill-btn" onClick={()=>toggleSport(s)} style={{background:a?'#2D5A3D':'#F0EBE3',color:a?'#fff':'#1A1A1A'}}>{s}</button>
-              )})}
-            </div>
-            <div style={{display:'flex',gap:8}}>
-              <input type="text" value={sportInput} onChange={e=>setSportInput(e.target.value)} onKeyDown={e=>e.key==='Enter'&&addCustom()} placeholder="Custom activity…"
-                style={{flex:1,padding:'7px 10px',borderRadius:10,border:'1px solid #E8E0D0',fontSize:12,background:'#FAF8F5',outline:'none',color:'#1A1A1A'}}/>
-              <button className="pill-btn" onClick={addCustom} style={{background:'#E8A84C',color:'#fff'}}>Add</button>
-            </div>
-          </div>
-        )}
-
-        {/* Mood */}
-        <div className="card" style={{marginBottom:12}}>
-          <p className="section-label">Mood Check-in</p>
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}>
-            <MoodPicker value={data.moodAM} onChange={v=>upd({moodAM:v})} label="☀️ Morning"/>
-            <MoodPicker value={data.moodPM} onChange={v=>upd({moodPM:v})} label="🌙 Evening"/>
-          </div>
-        </div>
-
-        {/* Note */}
-        <div className="card">
-          <p className="section-label">Note</p>
-          <textarea value={data.notes||''} onChange={e=>upd({notes:e.target.value})} placeholder="How did it go?"
-            style={{width:'100%',padding:'10px 12px',borderRadius:10,border:'1px solid #E8E0D0',fontSize:13,background:'#FAF8F5',color:'#1A1A1A',resize:'none',height:68,outline:'none',fontFamily:"'DM Sans',sans-serif",lineHeight:1.5}}/>
-        </div>
+        <DayForm dateStr={dateStr} data={data} onUpdate={upd} cheatDay={cheatDay} onSetCheat={onSetCheat} ver={ver}/>
       </div>
     </div>
   );
 }
 
-// ── MonthGrid ─────────────────────────────────────────────────────────────────
-function MonthGrid({year,month,ver,onDayTap,showResistance=true,compact=false}){
-  const today=todayStr();
-  const weeks=useMemo(()=>getWeeks(year,month),[year,month]);
-  const cellH=compact?22:36;
-  const fontSize=compact?10:12;
+// ── Calendar ──────────────────────────────────────────────────────────────────
+function getWeeks(year,month){
+  const first=new Date(year,month,1).getDay();
+  const total=new Date(year,month+1,0).getDate();
+  const cells=[];
+  for(let i=0;i<first;i++)cells.push(null);
+  for(let d=1;d<=total;d++)cells.push(localDateStr(new Date(year,month,d)));
+  while(cells.length%7)cells.push(null);
+  const weeks=[];for(let i=0;i<cells.length;i+=7)weeks.push(cells.slice(i,i+7));
+  return weeks;
+}
 
+function MonthGrid({year,month,ver,onDayTap,compact=false}){
+  const today=todayStr();
+  const weeks=useMemo(()=>getWeeks(year,month),[year,month,ver]);
+  const cellH=compact?22:36,fontSize=compact?10:12;
   return(
     <div>
-      {/* Header row */}
-      <div style={{display:'grid',gridTemplateColumns:`repeat(7,1fr)${showResistance?' 26px':''}`,gap:2,marginBottom:3}}>
-        {DAY_NAMES.map(d=>(
-          <span key={d} style={{fontSize:10,color:'#8B8578',textAlign:'center',fontWeight:500}}>{d}</span>
-        ))}
-        {showResistance&&<span style={{fontSize:9,color:'#2D5A3D',textAlign:'center',lineHeight:'12px'}}>💪</span>}
+      <div style={{display:'grid',gridTemplateColumns:'repeat(7,1fr)',gap:2,marginBottom:3}}>
+        {DAY_NAMES.map(d=><span key={d} style={{fontSize:10,color:'#8B8578',textAlign:'center',fontWeight:500}}>{d}</span>)}
       </div>
-
-      {weeks.map((week,wi)=>{
-        const weekResistance=week.filter(d=>d&&d<=today&&loadDay(d).resistance).length;
-        return(
-          <div key={wi} style={{display:'grid',gridTemplateColumns:`repeat(7,1fr)${showResistance?' 26px':''}`,gap:2,marginBottom:2}}>
-            {week.map((ds,di)=>{
-              if(!ds)return<div key={di} style={{minHeight:cellH}}/>;
-              const isFuture=ds>today;
-              const isToday=ds===today;
-              const d=isFuture?emptyDay():loadDay(ds);
-              const dayNum=strToDate(ds).getDate();
-              const bg=isFuture?'#F8F5F0':heatColor(d.walkMinutes);
-              const tc=isFuture?'#C8C0B8':heatTextColor(d.walkMinutes);
-              return(
-                <button key={di} className="day-cell"
-                  onClick={()=>!isFuture&&onDayTap(ds)}
-                  style={{background:bg,border:isToday?'2px solid #2D5A3D':'1.5px solid transparent',minHeight:cellH,cursor:isFuture?'default':'pointer'}}>
-                  <span style={{fontSize,color:tc,fontWeight:isToday?700:400}}>{dayNum}</span>
-                  {!compact&&!isFuture&&d.resistance&&(
-                    <span style={{width:4,height:4,borderRadius:'50%',background:d.walkMinutes>=WALK_GOAL?'rgba(255,255,255,.8)':'#2D5A3D',display:'block'}}/>
-                  )}
-                </button>
-              );
-            })}
-            {showResistance&&(
-              <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:3}}>
-                {[0,1].map(i=>(
-                  <span key={i} style={{width:compact?6:8,height:compact?6:8,borderRadius:'50%',background:weekResistance>i?'#2D5A3D':'#E8E0D0',display:'block'}}/>
-                ))}
-              </div>
-            )}
-          </div>
-        );
-      })}
+      {weeks.map((week,wi)=>(
+        <div key={wi} style={{display:'grid',gridTemplateColumns:'repeat(7,1fr)',gap:2,marginBottom:2}}>
+          {week.map((ds,di)=>{
+            if(!ds)return<div key={di} style={{minHeight:cellH}}/>;
+            const isFuture=ds>today, isToday=ds===today;
+            const inProg=!!progDayNum(ds);
+            const d=isFuture?emptyDay():loadDay(ds);
+            const dayNum=strToDate(ds).getDate();
+            const bg=isFuture?(inProg?'#F0EDE6':'#F8F5F0'):dayColor(d);
+            const tc=isFuture?'#C8C0B8':dayTextColor(d);
+            const hasRes=!isFuture&&(d.w1r||d.w2r);
+            return(
+              <button key={di} className="day-cell" onClick={()=>!isFuture&&onDayTap(ds)}
+                style={{background:bg,border:isToday?'2px solid #2D5A3D':inProg&&!compact?'1px solid #E0D8CA':'1.5px solid transparent',minHeight:cellH,cursor:isFuture?'default':'pointer'}}>
+                <span style={{fontSize,color:tc,fontWeight:isToday?700:400}}>{dayNum}</span>
+                {!compact&&hasRes&&<span style={{width:4,height:4,borderRadius:'50%',background:(fullComplete(d)||coreComplete(d))?'rgba(255,255,255,.85)':'#2D5A3D',display:'block'}}/>}
+              </button>
+            );
+          })}
+        </div>
+      ))}
     </div>
   );
 }
 
-// ── CalendarTab ───────────────────────────────────────────────────────────────
 function CalendarTab({ver,onDayTap}){
   const now=new Date();
   const [view,setView]=useState('month');
   const [cy,setCy]=useState(now.getFullYear());
   const [cm,setCm]=useState(now.getMonth());
-
   const prevMonth=()=>{if(cm===0){setCy(y=>y-1);setCm(11)}else setCm(m=>m-1)};
   const nextMonth=()=>{if(cm===11){setCy(y=>y+1);setCm(0)}else setCm(m=>m+1)};
-  const canGoNext=new Date(cy,cm+1,1)<=new Date(now.getFullYear(),now.getMonth()+1,1);
-
   return(
     <div style={{padding:'16px 16px 0'}}>
-      {/* View toggle */}
-      <div style={{display:'flex',gap:8,marginBottom:12,justifyContent:'center'}}>
+      <div style={{display:'flex',gap:8,marginBottom:12}}>
         {['month','year'].map(v=>(
-          <button key={v} onClick={()=>setView(v)} style={{flex:1,padding:'8px',border:'none',borderRadius:12,cursor:'pointer',fontSize:13,fontWeight:600,background:view===v?'#2D5A3D':'#F0EBE3',color:view===v?'#fff':'#8B8578',fontFamily:"'DM Sans',sans-serif",textTransform:'capitalize'}}>
+          <button key={v} onClick={()=>setView(v)} style={{flex:1,padding:8,border:'none',borderRadius:12,cursor:'pointer',fontSize:13,fontWeight:600,background:view===v?'#2D5A3D':'#F0EBE3',color:view===v?'#fff':'#8B8578',textTransform:'capitalize',fontFamily:"'DM Sans',sans-serif"}}>
             {v==='month'?'📅 Month':'📆 Year'}
           </button>
         ))}
       </div>
-
       {view==='month'&&(
         <>
-          {/* Month navigation */}
           <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:12}}>
             <button className="nav-btn" onClick={prevMonth}>‹</button>
-            <span style={{fontFamily:"'DM Serif Display',serif",fontSize:18,color:'#1A1A1A'}}>{monthLabel(cy,cm)}</span>
-            <button className="nav-btn" onClick={nextMonth} style={{opacity:canGoNext?1:.3,pointerEvents:canGoNext?'auto':'none'}}>›</button>
+            <span style={{fontFamily:"'DM Serif Display',serif",fontSize:18}}>{monthLabel(cy,cm)}</span>
+            <button className="nav-btn" onClick={nextMonth}>›</button>
           </div>
-
           <div className="card" style={{marginBottom:12}}>
-            <MonthGrid year={cy} month={cm} ver={ver} onDayTap={onDayTap} showResistance={true}/>
-            {/* Legend */}
+            <MonthGrid year={cy} month={cm} ver={ver} onDayTap={onDayTap}/>
             <div style={{display:'flex',gap:8,marginTop:14,justifyContent:'center',flexWrap:'wrap'}}>
-              {[['#EDE8E0','0min'],['#D0E8D8','1-29'],['#A3CDB0','30-59'],['#6AAF82','60-89'],['#2D5A3D','90+ ✓']].map(([c,l])=>(
+              {[['#2D5A3D','All done'],['#6AAF82','Core done'],['#D0E8D8','Partial'],['#EDE8E0','Empty']].map(([c,l])=>(
                 <div key={l} style={{display:'flex',alignItems:'center',gap:3}}>
                   <span style={{width:10,height:10,borderRadius:3,background:c,display:'inline-block',border:'1px solid rgba(0,0,0,.08)'}}/>
                   <span style={{fontSize:10,color:'#8B8578'}}>{l}</span>
                 </div>
               ))}
-            </div>
-            <div style={{display:'flex',gap:6,marginTop:8,justifyContent:'center',alignItems:'center'}}>
-              <span style={{width:7,height:7,borderRadius:'50%',background:'#2D5A3D',display:'inline-block'}}/>
-              <span style={{fontSize:10,color:'#8B8578'}}>Dot inside cell = resistance day&nbsp;&nbsp;</span>
-              <span style={{width:7,height:7,borderRadius:'50%',background:'#2D5A3D',display:'inline-block'}}/>
-              <span style={{width:7,height:7,borderRadius:'50%',background:'#E8E0D0',display:'inline-block',marginLeft:-2}}/>
-              <span style={{fontSize:10,color:'#8B8578'}}>= weekly resistance (right col)</span>
+              <div style={{display:'flex',alignItems:'center',gap:3}}>
+                <span style={{width:6,height:6,borderRadius:'50%',background:'#2D5A3D',display:'inline-block'}}/>
+                <span style={{fontSize:10,color:'#8B8578'}}>Resistance day</span>
+              </div>
             </div>
           </div>
-
           <p style={{fontSize:11,color:'#B0A898',textAlign:'center',marginBottom:12}}>Tap any past day to view or edit</p>
         </>
       )}
-
       {view==='year'&&(
         <>
           <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:12}}>
             <button className="nav-btn" onClick={()=>setCy(y=>y-1)}>‹</button>
-            <span style={{fontFamily:"'DM Serif Display',serif",fontSize:20,color:'#1A1A1A'}}>{cy}</span>
-            <button className="nav-btn" onClick={()=>setCy(y=>y+1)} style={{opacity:cy<now.getFullYear()?1:.3,pointerEvents:cy<now.getFullYear()?'auto':'none'}}>›</button>
+            <span style={{fontFamily:"'DM Serif Display',serif",fontSize:20}}>{cy}</span>
+            <button className="nav-btn" onClick={()=>setCy(y=>y+1)}>›</button>
           </div>
           <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:10,paddingBottom:16}}>
-            {Array.from({length:12},(_,i)=>{
-              const isFutureMonth=new Date(cy,i,1)>new Date(now.getFullYear(),now.getMonth(),1);
-              return(
-                <div key={i} className="card" style={{padding:10,opacity:isFutureMonth?.4:1}}>
-                  <p style={{fontSize:11,fontWeight:600,color:'#1A1A1A',textAlign:'center',marginBottom:6}}>{monthShort(cy,i)}</p>
-                  <MonthGrid year={cy} month={i} ver={ver} onDayTap={onDayTap} showResistance={false} compact={true}/>
-                </div>
-              );
-            })}
+            {Array.from({length:12},(_,i)=>(
+              <div key={i} className="card" style={{padding:10}}>
+                <p style={{fontSize:11,fontWeight:600,textAlign:'center',marginBottom:6}}>{monthShort(cy,i)}</p>
+                <MonthGrid year={cy} month={i} ver={ver} onDayTap={onDayTap} compact/>
+              </div>
+            ))}
           </div>
         </>
       )}
@@ -353,94 +432,142 @@ function CalendarTab({ver,onDayTap}){
   );
 }
 
-// ── StatsTab ──────────────────────────────────────────────────────────────────
-function StatsTab({ver,streak,weekCompleted,resistanceThisWeek}){
-  const now=new Date();
-  const [heatMonth,setHeatMonth]=useState(now.getMonth());
-  const [heatYear,setHeatYear]=useState(now.getFullYear());
+// ── Stats ─────────────────────────────────────────────────────────────────────
+function StatsTab({ver,streak}){
   const today=todayStr();
-  const totalDays=Object.keys(getAllData()).length;
   const fileRef=useRef(null);
   const [restoreMsg,setRestoreMsg]=useState(null);
+  const cheatDay=getCheatDay();
 
-  const prevHeatMonth=()=>{if(heatMonth===0){setHeatYear(y=>y-1);setHeatMonth(11)}else setHeatMonth(m=>m-1)};
-  const nextHeatMonth=()=>{if(heatMonth===11){setHeatYear(y=>y+1);setHeatMonth(0)}else setHeatMonth(m=>m+1)};
-  const canNext=new Date(heatYear,heatMonth+1,1)<=new Date(now.getFullYear(),now.getMonth()+1,1);
+  const elapsed=Math.max(0,Math.min(dayDiff(P_START,today)+1,P_DAYS));
+  const remaining=Math.max(0,P_DAYS-elapsed);
+  const started=today>=P_START;
+
+  const progDates=Array.from({length:elapsed},(_,i)=>{const d=strToDate(P_START);d.setDate(d.getDate()+i);return localDateStr(d)});
+  const fullDays=progDates.filter(ds=>fullComplete(loadDay(ds))).length;
+  const coreDays=progDates.filter(ds=>{const d=loadDay(ds);return coreComplete(d)&&!fullComplete(d)}).length;
+
+  // Missed counts by requirement
+  const missCounts={};
+  progDates.forEach(ds=>{missedItems(loadDay(ds)).forEach(m=>{missCounts[m]=(missCounts[m]||0)+1})});
+
+  // Protein rotation this program week
+  const curWeek=progWeekNum(today);
+  const weekDates=curWeek?progWeekDates(curWeek):[];
+  const protCounts={white:0,fish:0,red:0,pork:0};
+  weekDates.forEach(ds=>{if(ds<=today){const p=loadDay(ds).protein;if(p)protCounts[p]++}});
 
   const exportToiCloud=()=>{
-    const data=getAllData();const dc=Object.keys(data).length;
-    if(!dc){showToast('Log a day first, then back up!');return}
-    const json=JSON.stringify({version:1,exportedAt:new Date().toISOString(),data},null,2);
+    const data=getAllData();const dc=Object.keys(data).filter(k=>k.startsWith(PFX)).length;
+    const json=JSON.stringify({version:2,exportedAt:new Date().toISOString(),data},null,2);
     const blob=new Blob([json],{type:'application/json'});
     const url=URL.createObjectURL(blob);const a=document.createElement('a');
     a.href=url;a.download=`move-backup-${today}.json`;
     document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
-    showToast(`Saved ${dc} days — choose iCloud Drive in Files ☁️`);
+    showToast(`Saved backup — choose iCloud Drive in Files ☁️`);
   };
-
   const handleRestore=e=>{
     const file=e.target.files?.[0];if(!file)return;
     const reader=new FileReader();
     reader.onload=ev=>{
-      try{
-        const parsed=JSON.parse(ev.target.result);
-        if(!parsed.data)throw new Error();
+      try{const parsed=JSON.parse(ev.target.result);if(!parsed.data)throw 0;
         restoreAllData(parsed.data);
-        const count=Object.keys(parsed.data).length;
-        setRestoreMsg(`✓ Restored ${count} days`);
-        showToast(`✓ Restored ${count} days of data`);
-      }catch{setRestoreMsg('⚠️ Invalid file');showToast('⚠️ Couldn\'t read that file')}
+        setRestoreMsg('✓ Restored');showToast('✓ Data restored');
+      }catch{setRestoreMsg('⚠️ Invalid file');showToast("⚠️ Couldn't read that file")}
     };
     reader.readAsText(file);e.target.value='';
   };
 
   return(
     <div style={{padding:'16px 16px 0'}}>
-      {/* Stat cards */}
+      {/* Program summary */}
+      <div className="card" style={{marginBottom:12,textAlign:'center'}}>
+        <p className="section-label">75 Medium Hard · Jul 14 → Sep 12</p>
+        {started?(
+          <>
+            <div style={{fontSize:34,fontFamily:"'DM Serif Display',serif",color:'#2D5A3D'}}>{fullDays}<span style={{fontSize:16,color:'#8B8578'}}> / {elapsed} days complete</span></div>
+            <p style={{fontSize:12,color:'#8B8578',marginTop:4}}>{coreDays} more core-complete · {remaining} days remaining</p>
+            <div style={{background:'#F0EBE3',borderRadius:8,height:10,marginTop:12,overflow:'hidden'}}>
+              <div style={{width:`${(elapsed/P_DAYS)*100}%`,height:'100%',background:'linear-gradient(90deg,#6AAF82,#2D5A3D)',borderRadius:8,transition:'width .5s'}}/>
+            </div>
+            <p style={{fontSize:10,color:'#B0A898',marginTop:5}}>Day {elapsed} of {P_DAYS}</p>
+          </>
+        ):(
+          <div style={{fontSize:24,fontFamily:"'DM Serif Display',serif",color:'#2D5A3D'}}>Starts in {dayDiff(today,P_START)} days</div>
+        )}
+      </div>
+
+      {/* Quick stats */}
       <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12,marginBottom:12}}>
         {[
-          {label:'Walk Streak',value:`${streak}d`,icon:'🔥',color:'#E8A84C'},
-          {label:'Walk Days (7d)',value:`${weekCompleted}/7`,icon:'🚶',color:'#2D5A3D'},
-          {label:'Resistance (7d)',value:`${resistanceThisWeek}/2`,icon:'💪',color:'#2D5A3D'},
-          {label:'Total Days',value:`${totalDays}`,icon:'📅',color:'#E8A84C'},
-        ].map(({label,value,icon,color})=>(
+          {label:'Core Streak',value:`${streak}d`,icon:'🔥'},
+          {label:'Cheat Day',value:cheatDay?'Used':'Available',icon:cheatDay?'🍺':'🎟️'},
+        ].map(({label,value,icon})=>(
           <div key={label} className="card" style={{textAlign:'center'}}>
-            <div style={{fontSize:28,marginBottom:4}}>{icon}</div>
-            <div style={{fontSize:24,fontFamily:"'DM Serif Display',serif",color}}>{value}</div>
+            <div style={{fontSize:26,marginBottom:4}}>{icon}</div>
+            <div style={{fontSize:20,fontFamily:"'DM Serif Display',serif",color:'#2D5A3D'}}>{value}</div>
             <div style={{fontSize:10,color:'#8B8578',textTransform:'uppercase',letterSpacing:.8,marginTop:2}}>{label}</div>
           </div>
         ))}
       </div>
 
-      {/* Monthly heatmap */}
+      {/* Weekly resistance compliance */}
       <div className="card" style={{marginBottom:12}}>
-        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:12}}>
-          <button className="nav-btn" onClick={prevHeatMonth} style={{width:28,height:28,fontSize:16}}>‹</button>
-          <p className="section-label" style={{marginBottom:0}}>{monthLabel(heatYear,heatMonth)} Activity</p>
-          <button className="nav-btn" onClick={nextHeatMonth} style={{width:28,height:28,fontSize:16,opacity:canNext?1:.3,pointerEvents:canNext?'auto':'none'}}>›</button>
-        </div>
-        <MonthGrid year={heatYear} month={heatMonth} ver={ver} onDayTap={()=>{}} showResistance={true}/>
-        <div style={{display:'flex',gap:3,marginTop:12,justifyContent:'center',alignItems:'center'}}>
-          <span style={{fontSize:10,color:'#8B8578',marginRight:4}}>Walk:</span>
-          {[['#EDE8E0','0'],['#D0E8D8','<30'],['#A3CDB0','<60'],['#6AAF82','<90'],['#2D5A3D','✓90']].map(([c,l])=>(
-            <div key={l} style={{display:'flex',alignItems:'center',gap:2}}>
-              <span style={{width:9,height:9,borderRadius:2,background:c,display:'inline-block',border:'1px solid rgba(0,0,0,.08)'}}/>
-              <span style={{fontSize:9,color:'#8B8578'}}>{l}</span>
-            </div>
-          ))}
-          <span style={{fontSize:10,color:'#8B8578',marginLeft:6}}>💪 = 2×/wk resistance</span>
+        <p className="section-label">Resistance · {RES_WEEKLY}× per week</p>
+        <div style={{display:'flex',flexDirection:'column',gap:7}}>
+          {Array.from({length:TOTAL_WEEKS},(_,i)=>{
+            const w=i+1;
+            const dates=progWeekDates(w);
+            const isPastOrCurrent=dates[0]<=today;
+            if(!isPastOrCurrent)return null;
+            const count=weekResCount(w);
+            const met=count>=RES_WEEKLY;
+            return(
+              <div key={w} style={{display:'flex',alignItems:'center',gap:10}}>
+                <span style={{fontSize:11,color:'#8B8578',width:36}}>Wk {w}</span>
+                <div style={{flex:1,background:'#F0EBE3',borderRadius:6,height:14,overflow:'hidden'}}>
+                  <div style={{width:`${Math.min(count/RES_WEEKLY,1)*100}%`,height:'100%',background:met?'#2D5A3D':'#E8A84C',borderRadius:6,transition:'width .4s'}}/>
+                </div>
+                <span style={{fontSize:11,fontWeight:700,color:met?'#2D5A3D':'#8B8578',width:28,textAlign:'right'}}>{count}/{RES_WEEKLY}</span>
+              </div>
+            );
+          })}
+          {!started&&<p style={{fontSize:12,color:'#B0A898'}}>Weekly bars appear once the program starts.</p>}
         </div>
       </div>
 
-      {/* iCloud Backup */}
+      {/* Protein rotation this week */}
+      {curWeek&&(
+        <div className="card" style={{marginBottom:12}}>
+          <p className="section-label">Protein Rotation · Week {curWeek}</p>
+          <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
+            {[['white','🍗 White','4-5'],['fish','🐟 Fish','1-2'],['red','🥩 Red','1-2'],['pork','🥓 Pork','rare']].map(([id,label,goal])=>(
+              <div key={id} style={{flex:1,minWidth:70,background:'#FAF8F5',borderRadius:12,padding:'8px 6px',textAlign:'center',border:'1px solid #F0EBE3'}}>
+                <div style={{fontSize:13,fontWeight:600}}>{label}</div>
+                <div style={{fontSize:18,fontFamily:"'DM Serif Display',serif",color:'#2D5A3D'}}>{protCounts[id]}</div>
+                <div style={{fontSize:9,color:'#B0A898'}}>goal {goal}/wk</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Missed requirements */}
+      {started&&Object.keys(missCounts).length>0&&(
+        <div className="card" style={{marginBottom:12}}>
+          <p className="section-label">Missed Requirements (program to date)</p>
+          <div style={{display:'flex',flexWrap:'wrap',gap:6}}>
+            {Object.entries(missCounts).sort((a,b)=>b[1]-a[1]).map(([m,c])=>(
+              <span key={m} style={{background:'#FFF5E8',color:'#B07A20',borderRadius:10,fontSize:11,padding:'4px 9px',fontWeight:600}}>{m} ×{c}</span>
+            ))}
+          </div>
+          <p style={{fontSize:10,color:'#B0A898',marginTop:8}}>Tap days in the Calendar to fill in anything you missed logging.</p>
+        </div>
+      )}
+
+      {/* Backup */}
       <div className="card" style={{marginBottom:12}}>
         <p className="section-label">☁️ iCloud Backup</p>
-        <div style={{background:'#F0F8F3',borderRadius:12,padding:'11px 14px',marginBottom:14,borderLeft:'3px solid #2D5A3D'}}>
-          <p style={{fontSize:12,color:'#5A7A62',lineHeight:1.7}}>
-            Tap <strong>Save</strong> → Files sheet opens → choose <strong>iCloud Drive</strong> → Save.<br/>
-            To restore on a new device, tap <strong>Restore</strong> and pick your backup file.
-          </p>
-        </div>
         <button className="backup-btn" onClick={exportToiCloud} style={{background:'#2D5A3D',color:'#fff',marginBottom:10}}>
           <span style={{fontSize:18}}>☁️</span> Save to iCloud Drive
         </button>
@@ -449,7 +576,6 @@ function StatsTab({ver,streak,weekCompleted,resistanceThisWeek}){
         </button>
         {restoreMsg&&<p style={{fontSize:12,color:'#2D5A3D',textAlign:'center',marginTop:10,fontWeight:600}}>{restoreMsg}</p>}
         <input ref={fileRef} type="file" accept=".json" onChange={handleRestore} style={{display:'none'}}/>
-        <p style={{fontSize:11,color:'#B0A898',textAlign:'center',marginTop:12}}>{totalDays} day{totalDays!==1?'s':''} on this device</p>
       </div>
     </div>
   );
@@ -461,55 +587,59 @@ function App(){
   const [today,setToday]=useState(todayStr);
   const [dayData,setDayData]=useState(()=>loadDay(todayStr()));
   const [modalDate,setModalDate]=useState(null);
-  const [ver,setVer]=useState(0); // increments on any save, triggers re-renders
+  const [ver,setVer]=useState(0);
+  const [cheat,setCheat]=useState(getCheatDay);
   const bump=()=>setVer(v=>v+1);
 
-  // Midnight rollover — re-initialize today's data when date changes
   useEffect(()=>{
-    const check=setInterval(()=>{
-      const t=todayStr();
-      if(t!==today){setToday(t);setDayData(loadDay(t));bump()}
-    },30000);
-    return()=>clearInterval(check);
+    const t=setInterval(()=>{const t2=todayStr();if(t2!==today){setToday(t2);setDayData(loadDay(t2));bump()}},30000);
+    return()=>clearInterval(t);
   },[today]);
 
-  const updateToday=patch=>{
-    const next={...dayData,...patch};
-    setDayData(next);saveDay(today,next);bump();
-  };
-  const toggleTodaySport=s=>{const c=dayData.sports||[];updateToday({sports:c.includes(s)?c.filter(x=>x!==s):[...c,s]})};
-  const [showSports,setShowSports]=useState(false);
-  const [sportInput,setSportInput]=useState('');
-  const addCustomSport=()=>{if(!sportInput.trim())return;updateToday({sports:[...(dayData.sports||[]),sportInput.trim()]});setSportInput('')};
-
-  // Streak calc
-  const getLast7=()=>Array.from({length:7},(_,i)=>{const d=new Date();d.setDate(d.getDate()-(6-i));return localDateStr(d)});
-  const days7=getLast7();
-  const streak=useMemo(()=>{let s=0;for(const d of[...days7].reverse()){if((loadDay(d).walkMinutes||0)>=WALK_GOAL)s++;else break}return s},[ver,today]);
-  const weekCompleted=useMemo(()=>days7.filter(d=>(loadDay(d).walkMinutes||0)>=WALK_GOAL).length,[ver,today]);
-  const resistanceThisWeek=useMemo(()=>days7.filter(d=>loadDay(d).resistance).length,[ver,today]);
-  const walkDone=dayData.walkMinutes>=WALK_GOAL;
-
-  const handleDayTap=ds=>{
-    if(ds===today){setTab('today');return}
-    setModalDate(ds);
-  };
+  const updateToday=patch=>{const next={...dayData,...patch};setDayData(next);saveDay(today,next);bump()};
+  const handleSetCheat=ds=>{if(getCheatDay())return;setCheatDay(ds);setCheat(ds);bump();showToast('🍺 Cheat day locked in — enjoy it!')};
+  const handleDayTap=ds=>{if(ds===today){setTab('today');return}setModalDate(ds)};
   const handleModalSaved=(ds,data)=>{bump();if(ds===today)setDayData(data)};
+
+  // Core streak: consecutive core-complete days ending at today (or yesterday if today incomplete so far)
+  const streak=useMemo(()=>{
+    let s=0;let cursor=today;
+    const todayCore=coreComplete(loadDay(today));
+    if(!todayCore){const d=strToDate(today);d.setDate(d.getDate()-1);cursor=localDateStr(d)}
+    else s=0;
+    let ds=todayCore?today:cursor;
+    while(true){
+      const d=loadDay(ds);
+      if(coreComplete(d)){s++;const dd=strToDate(ds);dd.setDate(dd.getDate()-1);ds=localDateStr(dd)}
+      else break;
+      if(s>400)break;
+    }
+    return s;
+  },[ver,today]);
+
+  const n=progDayNum(today);
+  const preStart=today<P_START;
+  const postEnd=today>P_END;
+  const daysToStart=preStart?dayDiff(today,P_START):0;
+  const done=coreComplete(dayData);
+  const full=fullComplete(dayData);
 
   return(
     <div style={{minHeight:'100vh',background:'#F5F0E8',paddingBottom:80}}>
-
       {/* Header */}
       <div style={{padding:'52px 20px 16px',background:'linear-gradient(180deg,#2D5A3D,#3A6E4E)'}}>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start'}}>
           <div>
-            <h1 style={{fontFamily:"'DM Serif Display',serif",color:'#fff',fontSize:26,fontWeight:400}}>
-              {tab==='today'?`${new Date().toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}`:tab==='calendar'?'Calendar':'Progress'}
+            <h1 style={{fontFamily:"'DM Serif Display',serif",color:'#fff',fontSize:24,fontWeight:400}}>
+              {tab==='today'
+                ?(preStart?`${daysToStart} days to Day 1`:postEnd?'Program Complete 🎉':`Day ${n} of ${P_DAYS}`)
+                :tab==='calendar'?'Calendar':'Progress'}
             </h1>
             <p style={{color:'rgba(255,255,255,.65)',fontSize:12,marginTop:2}}>
-              {tab==='today'?(walkDone?'Walk goal crushed 🌿':`${WALK_GOAL-dayData.walkMinutes} min to goal`):
-               tab==='calendar'?'Tap any past day to view or edit':
-               `${weekCompleted}/7 walk days · ${resistanceThisWeek} resistance sessions`}
+              {tab==='today'
+                ?(preStart?'75 Medium Hard begins July 14 — log practice days now':full?'Fully complete — every box checked 🌿':done?'Core complete — finish the rest!':'75 Medium Hard · Jul 14 → Sep 12')
+                :tab==='calendar'?'Tap any past day to view or edit'
+                :'Compliance & backups'}
             </p>
           </div>
           {streak>0&&(
@@ -521,96 +651,18 @@ function App(){
         </div>
       </div>
 
-      {/* TODAY */}
       {tab==='today'&&(
         <div style={{padding:'16px 16px 0'}}>
-          <div className="card" style={{marginBottom:12}}>
-            <p className="section-label">Daily Walk · Tap from Apple Health</p>
-            <WalkRing minutes={dayData.walkMinutes} goal={WALK_GOAL}/>
-            <div style={{display:'flex',gap:8,marginTop:16,justifyContent:'center',flexWrap:'wrap'}}>
-              {[15,30,45,60,90].map(m=>(
-                <button key={m} className="pill-btn add-btn" onClick={()=>updateToday({walkMinutes:Math.min(dayData.walkMinutes+m,300)})}> +{m}</button>
-              ))}
-            </div>
-            {dayData.walkMinutes>0&&<button onClick={()=>updateToday({walkMinutes:0})} style={{display:'block',margin:'10px auto 0',background:'none',border:'none',color:'#C09070',fontSize:12,cursor:'pointer'}}>Reset</button>}
-            <p style={{fontSize:11,color:'#B0A898',textAlign:'center',marginTop:10}}>Open Health → Activity, note your walk minutes, tap above</p>
-          </div>
-
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12,marginBottom:12}}>
-            <div className="card" style={{textAlign:'center'}}>
-              <p className="section-label">Resistance</p>
-              <button onClick={()=>updateToday({resistance:!dayData.resistance})} style={{width:64,height:64,borderRadius:'50%',border:'none',cursor:'pointer',background:dayData.resistance?'#2D5A3D':'#F0EBE3',fontSize:26,transition:'all .2s',transform:dayData.resistance?'scale(1.05)':'scale(1)',boxShadow:dayData.resistance?'0 4px 14px rgba(45,90,61,.35)':'none'}}>
-                {dayData.resistance?'💪':'🏋️'}
-              </button>
-              <p style={{fontSize:11,color:dayData.resistance?'#2D5A3D':'#8B8578',marginTop:8,fontWeight:600}}>{dayData.resistance?'Done!':'Tap to log'}</p>
-              <p style={{fontSize:10,color:'#B0A898',marginTop:2}}>{resistanceThisWeek}/2 this week</p>
-            </div>
-            <div className="card">
-              <p className="section-label">Sports / Other</p>
-              <div style={{display:'flex',flexWrap:'wrap',gap:5,minHeight:36}}>
-                {(dayData.sports||[]).map(s=>(
-                  <span key={s} onClick={()=>toggleTodaySport(s)} style={{background:'#2D5A3D',color:'#fff',borderRadius:10,fontSize:11,padding:'3px 8px',cursor:'pointer'}}>{s} ×</span>
-                ))}
-                {!(dayData.sports?.length)&&<span style={{fontSize:11,color:'#B0A898'}}>None logged</span>}
-              </div>
-              <button onClick={()=>setShowSports(!showSports)} className="pill-btn add-btn" style={{marginTop:8,width:'100%',fontSize:12}}>{showSports?'Close':'+ Add Activity'}</button>
-            </div>
-          </div>
-
-          {showSports&&(
-            <div className="card" style={{marginBottom:12}}>
-              <p className="section-label">Choose Activity</p>
-              <div style={{display:'flex',flexWrap:'wrap',gap:7,marginBottom:10}}>
-                {SPORTS.map(s=>{const a=(dayData.sports||[]).includes(s);return(
-                  <button key={s} className="pill-btn" onClick={()=>toggleTodaySport(s)} style={{background:a?'#2D5A3D':'#F0EBE3',color:a?'#fff':'#1A1A1A'}}>{s}</button>
-                )})}
-              </div>
-              <div style={{display:'flex',gap:8}}>
-                <input type="text" value={sportInput} onChange={e=>setSportInput(e.target.value)} onKeyDown={e=>e.key==='Enter'&&addCustomSport()} placeholder="Custom activity…"
-                  style={{flex:1,padding:'8px 12px',borderRadius:10,border:'1px solid #E8E0D0',fontSize:13,background:'#FAF8F5',outline:'none',color:'#1A1A1A'}}/>
-                <button className="pill-btn" onClick={addCustomSport} style={{background:'#E8A84C',color:'#fff'}}>Add</button>
-              </div>
-            </div>
-          )}
-
-          <div className="card" style={{marginBottom:12}}>
-            <p className="section-label">Mood Check-in</p>
-            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
-              <MoodPicker value={dayData.moodAM} onChange={v=>updateToday({moodAM:v})} label="☀️ Morning"/>
-              <MoodPicker value={dayData.moodPM} onChange={v=>updateToday({moodPM:v})} label="🌙 Evening"/>
-            </div>
-          </div>
-
-          <div className="card" style={{marginBottom:12}}>
-            <p className="section-label">Quick Note</p>
-            <textarea value={dayData.notes||''} onChange={e=>updateToday({notes:e.target.value})} placeholder="How did it feel?"
-              style={{width:'100%',padding:'10px 12px',borderRadius:10,border:'1px solid #E8E0D0',fontSize:13,background:'#FAF8F5',color:'#1A1A1A',resize:'none',height:72,outline:'none',fontFamily:"'DM Sans',sans-serif",lineHeight:1.5}}/>
-          </div>
+          <DayForm dateStr={today} data={dayData} onUpdate={updateToday} cheatDay={cheat} onSetCheat={handleSetCheat} ver={ver}/>
         </div>
       )}
+      {tab==='calendar'&&<CalendarTab ver={ver} onDayTap={handleDayTap}/>}
+      {tab==='stats'&&<StatsTab ver={ver} streak={streak}/>}
 
-      {/* CALENDAR */}
-      {tab==='calendar'&&(
-        <CalendarTab ver={ver} onDayTap={handleDayTap}/>
-      )}
+      {modalDate&&<DayEditSheet dateStr={modalDate} onClose={()=>setModalDate(null)} onSaved={handleModalSaved} cheatDay={cheat} onSetCheat={handleSetCheat} ver={ver}/>}
 
-      {/* STATS */}
-      {tab==='stats'&&(
-        <StatsTab ver={ver} streak={streak} weekCompleted={weekCompleted} resistanceThisWeek={resistanceThisWeek}/>
-      )}
-
-      {/* Day edit modal */}
-      {modalDate&&(
-        <DayEditSheet dateStr={modalDate} onClose={()=>setModalDate(null)} onSaved={handleModalSaved}/>
-      )}
-
-      {/* Bottom Nav */}
       <div style={{position:'fixed',bottom:0,left:0,right:0,background:'rgba(255,255,255,.95)',backdropFilter:'blur(12px)',borderTop:'1px solid #EDE8E0',display:'flex',padding:'8px 0 20px'}}>
-        {[
-          {id:'today',icon:'🌿',label:'Today'},
-          {id:'calendar',icon:'📅',label:'Calendar'},
-          {id:'stats',icon:'📊',label:'Stats'},
-        ].map(({id,icon,label})=>(
+        {[{id:'today',icon:'🌿',label:'Today'},{id:'calendar',icon:'📅',label:'Calendar'},{id:'stats',icon:'📊',label:'Stats'}].map(({id,icon,label})=>(
           <button key={id} className="tab-btn" onClick={()=>setTab(id)} style={{color:tab===id?'#2D5A3D':'#8B8578'}}>
             <span style={{fontSize:22}}>{icon}</span>
             <span style={{fontSize:10,fontWeight:tab===id?600:400,letterSpacing:.5}}>{label}</span>
@@ -620,7 +672,6 @@ function App(){
     </div>
   );
 }
-
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
 </body>
